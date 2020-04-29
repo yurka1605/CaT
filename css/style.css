@@ -243,6 +243,12 @@ body {
     height: 17px;
     width: 100%;
 }
+.search h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 40px;
+    line-height: 1;
+}
 .results {
     position: relative;
     z-index: 1;
