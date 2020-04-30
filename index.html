@@ -21,14 +21,14 @@
         <div class="header__right">
             <div class="header__btn">Поставить задачу</div>
             <div class="push">
-                <img src="./assets/push.png" alt="push">
-                <div class="drop push__drop">
+                <img class="push__img" src="./assets/push.png" alt="push">
+                <div data-drop="push" class="drop push__drop">
                     <div></div>
                 </div>
             </div>
             <div class="header_reg">
-                <div class="reg__user">Фрилансер</div>
-                <div class="drop reg__drop"><div></div></div>
+                <div class="user reg__user">Фрилансер</div>
+                <div data-drop="user" class="drop reg__drop"><div></div></div>
             </div>
         </div>
     </header>
@@ -58,6 +58,499 @@
         <section class="main__content">
             <div class="search">
                 <h1>Поиск туров и бронирование авиабилетов</h1>
+                <div class="search__tabs">
+                    <div class="search__tab">
+                        <button>Поиск туров</button>
+                    </div>
+                    <div class="search__tab">
+                        <button>Горящие туры</button>
+                    </div>
+                </div>
+                <form action="" class="search__form">
+                    <div class="form-group">
+                        <div class="form-control">
+                            <label class="form-label">
+                                <span>Город Вылета</span>
+                            </label>
+                            <div class="city control">
+                                <input class="city" type="text" placeholder="Город">
+                                <div data-drop="city" class="drop city__drop"><div></div></div>
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label">
+                                <span>Куда</span>
+                                <div class="form-sort">
+                                    <div class="sort-item">
+                                        <img class="arrow" src="./assets/arrow-sort-orange.png" alt="arrow">
+                                        <img src="./assets/heart.png" alt="heart">
+                                    </div>
+                                    <div class="sort-item">
+                                        <img class="arrow" src="./assets/arrow-sort-white.png" alt="arrow">
+                                        <div>Ая</div>
+                                    </div>
+                                </div>
+                            </label>
+                            <div class="place control">
+                                <input class="country" type="text" placeholder="Все страны и курорты">
+                                <div data-drop="country" class="drop city__drop"><div></div></div>
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label">
+                                <span>Интервал Дат Вылета</span>
+                            </label>
+                            <div class="daterange">
+                                <input type="text" placeholder="05.02.2020 - 05.02.2020"/>
+                                <img src="./assets/calendar-icon.png" alt="calendar-icon">
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label thourists">
+                                <span>Взрослых</span>
+                                <span>Детей</span>
+                            </label>
+                            <div class="peoples">
+                                <div class="form-counter parent">
+                                    <div class="counter__plus">-</div>
+                                    <div class="counter__val">2</div>
+                                    <div class="counter__minus">+</div>
+                                </div>
+                                <div class="form-counter child">
+                                    <div class="counter__plus">-</div>
+                                    <div class="counter__val">2</div>
+                                    <div class="counter__minus">+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-control">
+                            <label class="form-label label-roads">
+                                <span>Время в пути</span>
+                                <span>Кол-во пересадок</span>
+                            </label>
+                            <div class="road">
+                                <div class="form-select">
+                                    <div class="road-time">7</div>
+                                    <div data-drop="road-time" class="drop road-time__drop"><div></div></div>
+                                </div>
+                                <div class="form-select">
+                                    <div class="road-count">2</div>
+                                    <div data-drop="road-count" class="drop road-count__drop"><div></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label">
+                                <span>Пул городов</span>
+                            </label>
+                            <div class="pull control">
+                                <input type="text" placeholder="Все страны и курорты">
+                                <div data-drop="pull" class="drop pull__drop"><div></div></div>
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label range-slider-label">
+                                <span>Время между пересадкой</span>
+                            </label>
+                            <div class="range-slider">
+                                <div class="range-min">0</div>
+                                <input type="range" min="1" max="100" value="50" class="rangeslider">
+                                <div class="range-max">5</div>
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label">
+                                <span>Типы переездов</span>
+                            </label>
+                            <div class="types control">
+                                <input type="text" placeholder="Выбрать все (по умолчанию)">
+                                <div data-drop="types" class="drop types__drop"><div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-control">
+                            <label class="form-label">
+                                <span>Курорт</span>
+                            </label>
+                            <div class="curort form-list__wrap">
+                                <input type="text" placeholder="Введите название курорта">
+                                <div class="form-list__block">
+                                    <div class="list-head">
+                                        <div class="list-head__all">
+                                            <input checked value="all" id="curort__all" class="radio" name="curort" type="radio">
+                                            <label for="curort__all">Выбраны все курорты</label>
+                                        </div>
+                                        <div class="form-sort">
+                                            <div class="sort-item">
+                                                <img class="arrow" src="./assets/arrow-sort-orange.png" alt="arrow">
+                                                <img src="./assets/heart.png" alt="heart">
+                                            </div>
+                                            <div class="sort-item">
+                                                <img class="arrow" src="./assets/arrow-sort-black.png" alt="arrow">
+                                                <div>Ая</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="form-list__items">
+                                        <li class="form-list__item">
+                                            <input value="curort-1" id="curort-1" class="radio" name="curort" type="radio">
+                                            <label for="curort-1">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="curort-2" id="curort-2" class="radio" name="curort" type="radio">
+                                            <label for="curort-2">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="curort-3" id="curort-3" class="radio" name="curort" type="radio">
+                                            <label for="curort-3">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="curort-4" id="curort-4" class="radio" name="curort" type="radio">
+                                            <label for="curort-4">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="curort-5" id="curort-5" class="radio" name="curort" type="radio">
+                                            <label for="curort-5">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="curort-6" id="curort-6" class="radio" name="curort" type="radio">
+                                            <label for="curort-6">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="curort-7" id="curort-7" class="radio" name="curort" type="radio">
+                                            <label for="curort-7">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="curort-8" id="curort-8" class="radio" name="curort" type="radio">
+                                            <label for="curort-8">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="curort-9" id="curort-9" class="radio" name="curort" type="radio">
+                                            <label for="curort-9">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="curort-10" id="curort-10" class="radio" name="curort" type="radio">
+                                            <label for="curort-10">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="curort-11" id="curort-11" class="radio" name="curort" type="radio">
+                                            <label for="curort-11">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="curort-12" id="curort-12" class="radio" name="curort" type="radio">
+                                            <label for="curort-12">Coral Travel</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label">
+                                <span>Выбор отеля</span>
+                                <div class="filtres__btn">Доп. фильтры</div>
+                            </label>
+                            <div class="hotel form-list__wrap">
+                                <input type="text" placeholder="Введите название отеля">
+                                <div class="form-list__block">
+                                    <div class="list-head">
+                                        <div class="list-head__all">
+                                            <input checked value="all" id="hotel__all" class="radio" name="hotel" type="radio">
+                                            <label for="hotel__all">Выбраны все отели</label>
+                                        </div>
+                                        <div class="form-sort">
+                                            <div class="sort-item">
+                                                <img class="arrow" src="./assets/arrow-sort-orange.png" alt="arrow">
+                                                <img src="./assets/heart.png" alt="heart">
+                                            </div>
+                                            <div class="sort-item">
+                                                <img class="arrow" src="./assets/arrow-sort-black.png" alt="arrow">
+                                                <div>Ая</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <ul class="form-list__items">
+                                        <li class="form-list__item">
+                                            <input value="hotel-1" id="hotel-1" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-1">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="hotel-2" id="hotel-2" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-2">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="hotel-3" id="hotel-3" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-3">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="hotel-4" id="hotel-4" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-4">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="hotel-5" id="hotel-5" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-5">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="hotel-6" id="hotel-6" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-6">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="hotel-7" id="hotel-7" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-7">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="hotel-8" id="hotel-8" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-8">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="hotel-9" id="hotel-9" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-9">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="hotel-10" id="hotel-10" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-10">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="hotel-11" id="hotel-11" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-11">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="hotel-12" id="hotel-12" class="radio" name="hotel" type="radio">
+                                            <label for="hotel-12">Coral Travel</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label label-night">
+                                <span>Ночей от</span>
+                                <span>До</span>
+                            </label>
+                            <div class="control__wrap">
+                                <div class="night">
+                                    <div class="form-select">
+                                        <div class="night-min">7</div>
+                                        <div data-drop="night-min" class="drop night-min__drop"><div></div></div>
+                                    </div>
+                                    <div class="form-select">
+                                        <div class="night-max">14</div>
+                                        <div data-drop="night-max" class="drop night-max__drop"><div></div></div>
+                                    </div>
+                                </div>
+                                <div class="filters">
+                                    <div class="filter">
+                                        <div class="filter__head">
+                                            <div class="filter__name">Категория</div>
+                                            <div class="filter__all">
+                                                <input checked value="all" id="category-all" class="filter-radio" name="category" type="radio">
+                                                <label for="category-all">Любая</label>
+                                            </div>
+                                        </div>
+                                        <div class="filter__options">
+                                            <div class="filter__option">
+                                                <input value="2" id="category-2" class="filter-radio" name="category" type="radio">
+                                                <label for="category-2">
+                                                    <span>2</span>
+                                                    <img src="./assets/star.png" alt="star">
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="3" id="category-3" class="filter-radio" name="category" type="radio">
+                                                <label for="category-3">
+                                                    <span>3</span>
+                                                    <img src="./assets/star.png" alt="star">
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="4" id="category-4" class="filter-radio" name="category" type="radio">
+                                                <label for="category-4">
+                                                    <span>4</span>
+                                                    <img src="./assets/star.png" alt="star">
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="5" id="category-5" class="filter-radio" name="category" type="radio">
+                                                <label for="category-5">
+                                                    <span>5</span>
+                                                    <img src="./assets/star.png" alt="star">
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="Apts" id="category-Apts" class="filter-radio" name="category" type="radio">
+                                                <label for="category-Apts">
+                                                    <span>Apts</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="Villas" id="category-Villas" class="filter-radio" name="category" type="radio">
+                                                <label for="category-Villas">
+                                                    <span>Villas</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="HV-1" id="category-HV-1" class="filter-radio" name="category" type="radio">
+                                                <label for="category-HV-1">
+                                                    <span>HV-1</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="HV-2" id="category-HV-2" class="filter-radio" name="category" type="radio">
+                                                <label for="category-HV-2">
+                                                    <span>HV-2</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filter">
+                                        <div class="filter__head">
+                                            <div class="filter__name">Питание</div>
+                                            <div class="filter__all">
+                                                <input checked value="all" id="eat-all" class="filter-radio" name="eat" type="radio">
+                                                <label for="eat-all">Любое</label>
+                                            </div>
+                                        </div>
+                                        <div class="filter__options">
+                                            <div class="filter__option">
+                                                <input value="FB" id="eat-FB" class="filter-radio" name="eat" type="radio">
+                                                <label for="eat-FB">
+                                                    <span>FB</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="HB" id="eat-HB" class="filter-radio" name="eat" type="radio">
+                                                <label for="eat-HB">
+                                                    <span>HB</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="BB" id="eat-BB" class="filter-radio" name="eat" type="radio">
+                                                <label for="eat-BB">
+                                                    <span>BB</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="AI" id="eat-AI" class="filter-radio" name="eat" type="radio">
+                                                <label for="eat-AI">
+                                                    <span>AI</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="UAI" id="eat-UAI" class="filter-radio" name="eat" type="radio">
+                                                <label for="eat-UAI">
+                                                    <span>UAI</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="RO" id="eat-RO" class="filter-radio" name="eat" type="radio">
+                                                <label for="eat-RO">
+                                                    <span>RO</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="FB+" id="eat-FB+" class="filter-radio" name="eat" type="radio">
+                                                <label for="eat-FB+">
+                                                    <span>FB+</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="HB+" id="eat-HB+" class="filter-radio" name="eat" type="radio">
+                                                <label for="eat-HB+">
+                                                    <span>HB+</span>
+                                                </label>
+                                            </div>
+                                            <div class="filter__option">
+                                                <input value="SC" id="eat-SC" class="filter-radio" name="eat" type="radio">
+                                                <label for="eat-SC">
+                                                    <span>SC</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filter filter-price">
+                                        <div class="price__labels">
+                                            <label for="price-min">Цена от</label>
+                                            <label for="price-max">до</label>
+                                        </div>
+                                        <div class="price__controls">
+                                            <input id="price-min" type="text">
+                                            <span>-</span>
+                                            <input id="price-max" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-control">
+                            <label class="form-label">
+                                <span>Туроператор</span>
+                            </label>
+                            <div class="thouroperator form-list__wrap">
+                                <div class="thouroperator__head">
+                                    <input checked value="all" id="thouroperator__all" class="radio" name="thouroperator" type="radio">
+                                    <label for="thouroperator__all">Выбраны все операторы</label>
+                                </div>
+                                <div class="form-list__block">
+                                    <ul class="form-list__items">
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-1" id="thouroperator-1" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-1">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-2" id="thouroperator-2" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-2">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-3" id="thouroperator-3" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-3">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-4" id="thouroperator-4" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-4">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-5" id="thouroperator-5" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-5">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-6" id="thouroperator-6" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-6">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-7" id="thouroperator-7" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-7">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-8" id="thouroperator-8" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-8">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-9" id="thouroperator-9" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-9">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-10" id="thouroperator-10" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-10">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-11" id="thouroperator-11" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-11">Coral Travel</label>
+                                        </li>
+                                        <li class="form-list__item">
+                                            <input value="thouroperator-12" id="thouroperator-12" class="radio" name="thouroperator" type="radio">
+                                            <label for="thouroperator-12">Coral Travel</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        
+                    </div>
+                </form>
             </div>
             <div class="results">
                 <div class="results__item">
@@ -66,6 +559,7 @@
             </div>
         </section>
     </main>
+    <script type="module" src="https://unpkg.com/imask"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
