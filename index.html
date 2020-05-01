@@ -548,13 +548,138 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        
+                        <div class="form__main-options">
+                            <div class="form__option">
+                                <input class="checkbox" type="checkbox" id="haveFlight">
+                                <label for="haveFlight">Перелет включен</label>
+                            </div>
+                            <div class="form__option">
+                                <input class="checkbox" type="checkbox" id="haveTickets">
+                                <label for="haveTickets">Есть билеты</label>
+                            </div>
+                            <div class="form__option">
+                                <input class="checkbox" type="checkbox" id="flight">
+                                <label for="flight">Есть места</label>
+                            </div>
+                        </div>
+                        <div class="form__btns">
+                            <button type="reset" class="form__btns-clear">×</button>
+                            <button type="submit" class="form__btns-submit">Найти</button>
+                        </div>
                     </div>
                 </form>
             </div>
             <div class="results">
-                <div class="results__item">
-
+                <header class="results__header">
+                    <div class="item__col-1">
+                        <span class="results__status">Поиск завершен на 100%</span>
+                    </div>
+                    <div class="item__col-2">
+                        <span class="results__info">
+                            Найдено <span class="results__amount">10389</span> туров по цене от <span class="results__price-min">15 811 Р</span>
+                        </span>
+                    </div>
+                    <div class="item__col-3">
+                        <button class="results__show-btn">Показать</button>
+                    </div>
+                </header>
+                <div class="results__items">
+                    <div class="results__item">
+                        <div class="item__about">
+                            <div class="item__col-1">
+                                <a href="#" class="item__photo">
+                                    <img src="./assets/thour-photo.png" alt="photo">
+                                    <span class="item__ticket">Популярный</span>
+                                </a>
+                            </div>
+                            <div class="item__col-2">
+                                <div class="item__main">
+                                    <div class="item__info">
+                                        <a href="#" class="item__name">KLEOPATRA ALIS HOTEL</a>
+                                        <div class="item__haracteristics">
+                                            <div class="item__rayting">
+                                                <img src="./assets/heart.png" alt="like">
+                                                <span>7,1</span>
+                                            </div>
+                                            <div class="item__trip">
+                                                <img src="./assets/trip.png" alt="trip">
+                                                <div class="circle fill"></div>
+                                                <div class="circle fill"></div>
+                                                <div class="circle fill"></div>
+                                                <div class="circle"></div>
+                                                <div class="circle"></div>
+                                            </div>
+                                            <div class="item__feedback">33 отзыва</div>
+                                        </div>
+                                        <div class="item__place">Турция, Аланья, 2 линия</div>
+                                        <div class="item__facilities">
+                                            <div class="item__facilitie">
+                                                <img src="./assets/icon-thour-1.png" alt="1">
+                                            </div>
+                                            <div class="item__facilitie">
+                                                <img src="./assets/icon-thour-2.png" alt="2">
+                                            </div>
+                                            <div class="item__facilitie">
+                                                <img src="./assets/icon-thour-3.png" alt="3">
+                                            </div>
+                                            <div class="item__facilitie">
+                                                <img src="./assets/icon-thour-4.png" alt="4">
+                                            </div>
+                                            <div class="item__facilitie">
+                                                <img src="./assets/icon-thour-5.png" alt="5">
+                                            </div>
+                                            <div class="item__facilitie">
+                                                <img src="./assets/icon-thour-6.png" alt="6">
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hotel__about">Подробнее об отеле</a>
+                                    </div>
+                                    <div class="item__details">
+                                        <div class="item__date-out">Вылеты 03 мар — 10 мар</div>
+                                        <div class="item__night-amount">7 - 14 ночей</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item__col-3">
+                                <div class="item__right">
+                                    <div class="item__prices">
+                                        <div class="item__prices-min">От <span>15 416</span> руб.</div>
+                                        <div class="item__thour-amount">121 тур</div>                                   
+                                    </div>
+                                    <button class="item__toogle-thoours-btn">
+                                        <span>Скрыть туры</span>
+                                        <div data-drop="thour" class="drop thour__drop"><div></div></div>
+                                    </button>
+                                    <div class="item__thouroperator__amount">от 4 операторов</div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="item__thours">
+                            <li class="item__thour">
+                                <div class="item__col-1">
+                                    <div class="thour__duration">
+                                        <div class="thour__dates">04 мар (ср) - 12 мар</div>
+                                        <div class="thour__night">8 ночей</div>
+                                    </div>
+                                </div>
+                                <div class="item__col-2">
+                                    <div class="thour__main">
+                                        <span>Чартерный рейс</span><br>
+                                        <span>RO</span> — Без питания<br>
+                                        <span>DBL</span> — STANDARD ROOM WITHOUT AIR CONDITIONS<br>
+                                        Цена с учетом топливного сбора = <span>21 483 руб.</span><br>
+                                    </div>
+                                </div>
+                                <div class="item__col-3">
+                                    <div class="thour__right">
+                                        <div class="thour__price">15 811 руб.</div>
+                                        <a href="#" class="thour__link">Подробнее...</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="results__more-btn">Показать еще 10</button>
                 </div>
             </div>
         </section>
