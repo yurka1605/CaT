@@ -861,6 +861,7 @@ input.rangeslider::-webkit-slider-thumb {
     height: 16px;
     background-image: url(../assets/shadow.png);
     background-size: 100% auto;
+    background-repeat: no-repeat;
 }
 .item__photo {
     position: relative;
@@ -1105,6 +1106,19 @@ input.rangeslider::-webkit-slider-thumb {
     color: #27578c;
 }
 /* END:results */
+
+/* popover */
+.popover {
+    position: absolute;
+    padding: 15px;
+    display: none;
+    background-color: #fff;
+}
+.popover.active {
+    display: block;
+    z-index: 111;
+}
+/* END:popover */
 
 @media (max-width: 1200px) {
 
