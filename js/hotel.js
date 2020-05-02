@@ -38,6 +38,26 @@ document.querySelectorAll('.slide-min').forEach(item => {
     })
 });
 
+document.querySelector('body').addEventListener('click', function (e) {
+    const target = e.target;
+    const arr_bool = [];
+    arr_bool.push(target == popover || popover.contains(target));
+    drops.forEach(drop => {
+        arr_bool.push(target == drop.parentElement);
+        arr_bool.push(target == drop);
+        arr_bool.push(target == drop.previousElementSibling);
+        arr_bool.push(target == drop.children[0]);
+    });
+    const isClose = arr_bool.filter(el => el).length === 0;
+    if (isClose) {
+        popover.className.split(' ').forEach(name => {
+            if (name !== 'popover') {
+                popover.classList.remove(name);
+            }
+        });
+        drops.forEach(drop => drop.classList.remove('active'))
+    }
+});
 /** ======================== END:User actions ========================== **/
 
 

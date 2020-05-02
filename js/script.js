@@ -1,4 +1,6 @@
 const popover = document.querySelector('.popover');
+const popup = document.querySelector('.popup');
+const bgPopup = document.querySelector('.bg-popup');
 const drops = document.querySelectorAll('.drop');
 const cityesOutTemplate = teplateConstructor(cityesOut, 'city');
 const countryTemplate = teplateConstructor(country, 'country');
@@ -8,6 +10,7 @@ const cityPullTemplate = teplateConstructor(pullCity, 'pull-city');
 const nightMin = teplateConstructor(night, 'night-min');
 const nightMax = teplateConstructor(night, 'night-max');
 const types = teplateConstructor(typeTravel, 'types-travel');
+const ctxMenuTpl = teplateConstructor(ctxMenu, 'user');
 
 window.onload = function() {
     document.querySelectorAll('.sort-item').forEach(item => {
@@ -16,7 +19,7 @@ window.onload = function() {
         });
     });
     drops.forEach(item => {
-        if (!item.classList.contains('thour__drop')) {
+        if (!item.classList.contains('thour__drop') && !item.classList.contains('push__drop')) {
             item.addEventListener('click', toggleOptions.bind(item));
         }
     });
@@ -50,15 +53,54 @@ window.onload = function() {
             this.lastElementChild.classList.toggle('active');
         })
     });
-    // const daterange = document.querySelector('.daterange input');
-    // daterange.addEventListener('input', function (e) {
-    //     console.log(e);
-    //     const regexp = new RegExp('([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))');
-    //     if (regexp.test(this.value)) {
 
-    //     }
-    // });
+    document.querySelector('.header__btn').addEventListener('click', function () {
+        document.querySelector('body').classList.add('popup-active');
+        popup.classList.add('task-popup');
+    });
+    document.querySelector('.popup__close-btn').addEventListener('click', closePopup);
+    document.querySelector('.bg-popup').addEventListener('click', closePopup);
+    document.querySelector('.push').addEventListener('click', function () {
+        drops.forEach(el => {
+            if (el !==  this.children[1]) {
+                el.classList.remove('active');
+            }
+        });
+        this.children[1].classList.toggle('active');
+        const isOpen = popover.classList.contains('push');
+        popover.className.split(' ').forEach(name => {
+            if (name !== 'popover') {
+                popover.classList.remove(name);
+            }
+        });
+        if (isOpen) {
+            return;
+        }
+
+        getPush(this.children[1]);
+    });
 };
+
+document.querySelector('body').addEventListener('click', function (e) {
+    const target = e.target;
+    const arr_bool = [];
+    arr_bool.push(target == popover || popover.contains(target));
+    drops.forEach(drop => {
+        arr_bool.push(target == drop.parentElement);
+        arr_bool.push(target == drop);
+        arr_bool.push(target == drop.previousElementSibling);
+        arr_bool.push(target == drop.children[0]);
+    });
+    const isClose = arr_bool.filter(el => el).length === 0;
+    if (isClose) {
+        popover.className.split(' ').forEach(name => {
+            if (name !== 'popover') {
+                popover.classList.remove(name);
+            }
+        });
+        drops.forEach(drop => drop.classList.remove('active'))
+    }
+});
 
 /** ======================== User actions ========================== **/
 document.querySelector('.header__menu-btn').addEventListener('click', function () {
@@ -69,6 +111,11 @@ document.querySelector('.header__menu-btn').addEventListener('click', function (
 
 
 /** ======================== Functions ========================== **/
+function closePopup () {
+    document.querySelector('body').classList.remove('popup-active');
+    popup.classList.remove('task-popup'); 
+}
+
 const toggleOptions = function () {
     const currentActive = this.classList.contains('active');
     const drop = this.dataset.drop;
@@ -120,6 +167,9 @@ function showPopover(This, className) {
             break;
         case 'types-travel':
             template = types;
+            break;
+        case 'user':
+            template = ctxMenuTpl;
             break;
         default:
             break;
@@ -213,4 +263,40 @@ const oninputSelect = function () {
     addlist(template, className);
 }
 
+function getPush(push) {
+    const className = "push";
+    const pushLink = "#";
+    const rect = push.parentElement.getBoundingClientRect();
+    const top = push.parentElement.offsetTop;
+    const popoverStyles = `top: ${ top }px; left: ${ rect.left - 1 }px;`;
+    popover.style.cssText = popoverStyles;
+    popover.classList.add('active', className);
+
+    let templateBody = '<ul class="push__list">';
+    if (pushList.length) {
+        pushList.forEach(el => {
+            templateBody += `<li class="push__list_item noviewed">
+                <div class="push__item_head">
+                    <img src="${ el.icon }" alt="${ el.name }">
+                    <span class="push__item_title">${ el.name }</span>
+                    <time class="push__item_moment">${ el.createdAt }</time>
+                </div>
+                <p class="push__item_message">${ el.message }</p>
+            </li>`;
+        });
+    } else {
+        templateBody +='<div class="push__list_empty">Нет новых уведомлений</div>';
+    }
+    templateBody +='</ul>';
+    const templateHeader = '<header class="push__header">Уведомления</header>';
+    const templateFooter = `<footer class="push__footer"><a href="${ pushLink }">Показать все</a></footer>`;
+    template = templateHeader + templateBody + templateFooter;
+    popover.innerHTML = template;
+
+    document.querySelectorAll('.push__list_item').forEach(node => {
+        node.addEventListener('click', function () {
+            node.classList.remove('noviewed');   
+        });
+    });
+}
 /** ======================== END:Functions ========================== **/

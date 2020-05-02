@@ -305,6 +305,27 @@ const roadTime = writeInArr(24);
 const stateAmount = writeInArr(5);
 const night = writeInArr(30);
 const typeTravel = ['Поезд', 'Самолет', 'Машина', 'Автобус'];
+const pushList = [
+    {
+        icon: "https://islands.s3.yandex.net/_/R18YwqXK.svg",
+        name: "Район",
+        createdAt: "7 минут назад",
+        message: "Загляните в ленту районных новостей — там есть кое-что интересное ⚡️"
+    },
+    {
+        icon: "https://islands.s3.yandex.net/_/2ecZ7HZm.svg",
+        name: "Дзен",
+        createdAt: "2 часа назад",
+        message: "Бесконечная лента публикаций, собранных специально для вас."
+    },
+    {
+        icon: "https://islands.s3.yandex.net/_/2VJbvjyz.svg",
+        createdAt: "21.01.2020",
+        name: "Эксперты",
+        message: "Посещайте новые места, смотрите фильмы, играйте в игры и пишите отзывы."
+    },
+];
+const ctxMenu = ['<a href="#" class="profile-btn">Личный кабинет</a>', '<button class="leave-account">Выход</button>'];
 
 function writeInArr(max) {
     let i = 0; 
