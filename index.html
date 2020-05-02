@@ -101,7 +101,7 @@
                                 <span>Интервал Дат Вылета</span>
                             </label>
                             <div class="daterange">
-                                <input type="text" placeholder="05.02.2020 - 05.02.2020"/>
+                                <input type="text" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" placeholder="05.02.2020 - 05.02.2020"/>
                                 <img src="./assets/calendar-icon.png" alt="calendar-icon">
                             </div>
                         </div>
@@ -146,8 +146,8 @@
                                 <span>Пул городов</span>
                             </label>
                             <div class="pull control">
-                                <input type="text" placeholder="Все страны и курорты">
-                                <div data-drop="pull" class="drop pull__drop"><div></div></div>
+                                <input class="pull-city" type="text" placeholder="Все страны и курорты">
+                                <div data-drop="pull-city" class="drop pull-city__drop"><div></div></div>
                             </div>
                         </div>
                         <div class="form-control">
@@ -165,8 +165,8 @@
                                 <span>Типы переездов</span>
                             </label>
                             <div class="types control">
-                                <input type="text" placeholder="Выбрать все (по умолчанию)">
-                                <div data-drop="types" class="drop types__drop"><div></div></div>
+                                <input class="types-travel" type="text" placeholder="Выбрать все (по умолчанию)">
+                                <div data-drop="types-travel" class="drop types-travel__drop"><div></div></div>
                             </div>
                         </div>
                     </div>
@@ -654,7 +654,7 @@
                                 </div>
                             </div>
                         </div>
-                        <ul class="item__thours">
+                        <ul class="item__thours active">
                             <li class="item__thour">
                                 <div class="item__col-1">
                                     <div class="thour__duration">
@@ -685,7 +685,7 @@
         </section>
     </main>
     <div class="popover"></div>
-    <script type="module" src="https://unpkg.com/imask"></script>
+    <!-- <script type="module" src="https://unpkg.com/imask"></script> -->
     <script src="js/constant.js"></script>
     <script src="js/script.js"></script>
 </body>
