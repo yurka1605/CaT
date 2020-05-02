@@ -231,12 +231,16 @@
     line-height: 44px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    min-width: 800px;
 }
 .hotel__table {
-    padding-bottom: 48px;
+    margin-bottom: 48px;
+    overflow: auto;
 }
 .hotel__table table {
     width: 100%;
+    min-width: 800px;
+    overflow: auto;
     border: 1px solid #78aedf;
     border-collapse: collapse;
 }
@@ -328,3 +332,94 @@
     line-height: 1;
 }
 /* END:feedback */
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 992px) {
+    .hotel__main {
+        flex-direction: column;
+    }
+    .hotel__slider {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .hotel__info {
+        width: 100%;
+    }
+    .main__content {
+        padding: 40px;
+    }
+    .hotel__get-to {
+        flex-wrap: wrap;
+    }
+    .get-to__variant {
+        min-width: calc(50% - 6px);
+        margin-bottom: 20px;
+    }
+    .get-to__variant:nth-child(2) .variant__head {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+    .get-to__variant:nth-child(3) .variant__head {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+}
+@media (max-width: 786px) {
+    .main__content {
+        padding: 30px 20px;
+    }
+    .hotel__table th {
+        line-height: 1;
+        font-size: 14px;
+    }
+}
+@media (max-width: 576px) {
+    .author__image {
+        margin: 0;
+    }
+    .hotel__feedback {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feedack__author {
+        width: 100%;
+        display: flex;
+    }
+    .feedback__info {
+        width: 100%;
+        margin: 0;
+        border: 0;
+        padding: 0;
+        padding-top: 16px;
+        margin-top: 16px;
+        border-top: 1px solid #27578c;
+    }
+    .author__info {
+        margin-left: 20px;
+    }
+    .main__content {
+        padding: 30px 15px;
+    }
+    .get-to__variant {
+        width: 100%;
+    }
+    .variant__head {
+        border-radius: 8px;
+    }
+    .hotel__facilitie img {
+        height: 25px;
+    }
+    .hotel__name {
+        font-size: 14px;
+    }
+    .slide-min {
+        height: auto;
+    }
+    .hotel__get-to {
+        padding-bottom: 30px;
+    }
+    thead, tbody {
+        min-width: 800px;
+    }
+}

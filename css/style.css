@@ -207,6 +207,7 @@ label {
     padding: 48px 25px 0 40px;
     background-color: #28334b;
     overflow: hidden;
+    z-index: 10;
 }
 nav {
     position: fixed;
