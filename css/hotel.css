@@ -236,6 +236,7 @@
 .hotel__table {
     margin-bottom: 48px;
     overflow: auto;
+    overflow-y: hidden;
 }
 .hotel__table table {
     width: 100%;
@@ -252,6 +253,7 @@
     position: relative;
     padding: 0 12px;
     line-height: 1;
+    text-align: center;
 }
 .hotel__table tr td:last-child,
 .hotel__table tr th:last-child,
@@ -262,9 +264,7 @@
 .hotel__table tr {
     border-bottom: 1px solid #78aedf;
     height: 44px;
-}
-.hotel__table tbody tr:nth-child(2n) {
-    background-color: #f0f0f0;
+    z-index: 10;
 }
 .transport__type {
     width: 36px;
@@ -332,6 +332,27 @@
     line-height: 1;
 }
 /* END:feedback */
+.hotel__table .hotel__table-item.hide {
+   height: 0;
+   border: 0;
+   z-index: 1;
+}
+.hotel__table .hotel__table-item.hide td {
+    height: 0;
+}
+.hotel__table .hotel__table-item.hide td div {
+    height: 0;
+    visibility: hidden;
+}
+tbody tr {
+    background-color: #f0f0f0;
+}
+.hotel__table .hotel__table-item:nth-child(2n) {
+    background-color: #f0f0f0;
+}
+.hotel__table .hotel__table-item:nth-child(2n + 1) {
+    background-color: #ffffff;
+}
 @media (max-width: 1200px) {
 }
 
