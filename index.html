@@ -6,6 +6,7 @@
     <meta name="description" content="Cheap AND Trip">
     <title>Cheap AND Trip</title>
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" type="text/css"  href ="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -81,10 +82,10 @@
                             <label class="form-label">
                                 <span>Куда</span>
                                 <div class="form-sort">
-                                    <div class="sort-item">
+                                    <!-- <div class="sort-item">
                                         <img class="arrow" src="./assets/arrow-sort-orange.png" alt="arrow">
                                         <img src="./assets/heart.png" alt="heart">
-                                    </div>
+                                    </div> -->
                                     <div class="sort-item">
                                         <img class="arrow" src="./assets/arrow-sort-white.png" alt="arrow">
                                         <div>Ая</div>
@@ -101,7 +102,7 @@
                                 <span>Интервал Дат Вылета</span>
                             </label>
                             <div class="daterange">
-                                <input type="text" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" placeholder="05.02.2020 - 05.02.2020"/>
+                                <input type="text"/>
                                 <img src="./assets/calendar-icon.png" alt="calendar-icon">
                             </div>
                         </div>
@@ -184,10 +185,10 @@
                                             <label for="curort__all">Выбраны все курорты</label>
                                         </div>
                                         <div class="form-sort">
-                                            <div class="sort-item">
+                                            <!-- <div class="sort-item">
                                                 <img class="arrow" src="./assets/arrow-sort-orange.png" alt="arrow">
                                                 <img src="./assets/heart.png" alt="heart">
-                                            </div>
+                                            </div> -->
                                             <div class="sort-item">
                                                 <img class="arrow" src="./assets/arrow-sort-black.png" alt="arrow">
                                                 <div>Ая</div>
@@ -261,10 +262,10 @@
                                             <label for="hotel__all">Выбраны все отели</label>
                                         </div>
                                         <div class="form-sort">
-                                            <div class="sort-item">
+                                            <!-- <div class="sort-item">
                                                 <img class="arrow" src="./assets/arrow-sort-orange.png" alt="arrow">
                                                 <img src="./assets/heart.png" alt="heart">
-                                            </div>
+                                            </div> -->
                                             <div class="sort-item">
                                                 <img class="arrow" src="./assets/arrow-sort-black.png" alt="arrow">
                                                 <div>Ая</div>
@@ -706,8 +707,15 @@
         </section>
     </div>
     <div class="bg-popup"></div>
-    <!-- <script type="module" src="https://unpkg.com/imask"></script> -->
     <script src="js/constant.js"></script>
     <script src="js/script.js"></script>
+    <!-- calendar -->
+    <script src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script>
+        $('.daterange input').daterangepicker();
+    </script>
+    <!-- END:calendar -->
 </body>
 </html>

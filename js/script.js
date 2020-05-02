@@ -79,6 +79,23 @@ window.onload = function() {
 
         getPush(this.children[1]);
     });
+    document.querySelectorAll('input[type="checkbox"]').forEach(node => {
+        node.addEventListener('click', function () {
+            const name = this.getAttribute('name');
+            if (this.value === 'all') {
+                const selectors = document.querySelectorAll(`input[name=${ name }]`);
+                selectors.forEach(node => {
+                    if (node.value !== 'all') {
+                        node.checked = false;
+                    }
+                });
+            } else if (this.checked) {
+                deleteCheckedAll(name);
+            } else {
+                checkAllChecked(name);
+            }  
+        });
+    });
 };
 
 document.querySelector('body').addEventListener('click', function (e) {
@@ -139,7 +156,7 @@ function showPopover(This, className) {
     popover.classList.add(className);
     const rect = This.parentElement.getBoundingClientRect();
     const top = This.parentElement.offsetTop;
-    const popoverStyles = `top: ${ top }px; left: ${ rect.left - 1 }px; width: ${ rect.width + 2 }px;`;
+    const popoverStyles = `top: ${ top }px; left: ${ rect.left }px; width: ${ rect.width + 1 }px;`;
     popover.style.cssText = popoverStyles;
     popover.classList.add('active');
     let template;
@@ -236,7 +253,7 @@ const oninputSelect = function () {
     const className = dropControl.dataset.drop;
     const rect = this.parentElement.getBoundingClientRect();
     const top = this.parentElement.offsetTop;
-    const popoverStyles = `top: ${ top }px; left: ${ rect.left - 1 }px; width: ${ rect.width + 2 }px;`;
+    const popoverStyles = `top: ${ top }px; left: ${ rect.left }px; width: ${ rect.width + 1 }px;`;
     popover.style.cssText = popoverStyles;
     popover.classList.add('active', className);
 
@@ -297,6 +314,32 @@ function getPush(push) {
         node.addEventListener('click', function () {
             node.classList.remove('noviewed');   
         });
+    });
+}
+
+function checkAllChecked (name) {
+    const arr = [];
+    const selectors = document.querySelectorAll(`input[name=${ name }]`);
+    selectors.forEach(node => {
+        if (node.checked && this.value !== 'all') {
+            arr.push(true);
+        }
+    });
+
+    if (arr.length === 0) {
+        selectors.forEach(node => {
+            if (node.value === 'all') {
+                node.checked = true;
+            }
+        });
+    }
+}
+
+function deleteCheckedAll(name) {
+    document.querySelectorAll(`input[name=${ name }]`).forEach(node => {
+        if (node.value === 'all') {
+            node.checked = false;
+        }
     });
 }
 /** ======================== END:Functions ========================== **/
