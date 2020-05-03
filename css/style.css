@@ -1,37 +1,34 @@
 @font-face {
 	font-family: 'Circe';
-	src: url('../fonts/circe_bold.eot'); /* IE 9 Compatibility Mode */
-	src: url('../fonts/circe_bold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
-		url('../fonts/circe_bold.woff2') format('woff2'), /* Super Modern Browsers */
-		url('../fonts/circe_bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
-		url('../fonts/circe_bold.ttf') format('truetype'), /* Safari, Android, iOS */
-        url('../fonts/circe_bold.svg#circe_bold') format('svg'); /* Chrome < 4, Legacy iOS */
+    src: url('Gilroy-Bold.eot');
+    src: local('Gilroy Bold'), local('Gilroy-Bold'),
+        url('Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Bold.woff') format('woff'),
+        url('Gilroy-Bold.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
-    font-weight: 600;
 }
 
 @font-face {
 	font-family: 'Circe';
-	src: url('../fonts/circe_light.eot'); /* IE 9 Compatibility Mode */
-	src: url('../fonts/circe_light.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
-		url('../fonts/circe_light.woff2') format('woff2'), /* Super Modern Browsers */
-		url('../fonts/circe_light.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
-		url('../fonts/circe_light.ttf') format('truetype'), /* Safari, Android, iOS */
-        url('../fonts/circe_light.svg#circe_light') format('svg'); /* Chrome < 4, Legacy iOS */
-    font-style: normal;
+    src: url('Gilroy-Light.eot');
+    src: local('Gilroy Light'), local('Gilroy-Light'),
+        url('Gilroy-Light.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Light.woff') format('woff'),
+        url('Gilroy-Light.ttf') format('truetype');
     font-weight: 300;
+    font-style: normal;
 }
 
 @font-face {
 	font-family: 'Circe';
-	src: url('../fonts/circe.eot'); /* IE 9 Compatibility Mode */
-	src: url('../fonts/circe.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
-		url('../fonts/circe.woff2') format('woff2'), /* Super Modern Browsers */
-		url('../fonts/circe.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
-		url('../fonts/circe.ttf') format('truetype'), /* Safari, Android, iOS */
-        url('../fonts/circe.svg#circe') format('svg'); /* Chrome < 4, Legacy iOS */
-    font-style: normal;
+    src: url('Gilroy-Regular.eot');
+    src: local('Gilroy Regular'), local('Gilroy-Regular'),
+        url('Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Gilroy-Regular.woff') format('woff'),
+        url('Gilroy-Regular.ttf') format('truetype');
     font-weight: 400;
+    font-style: normal;
 }
 
 * {
@@ -479,14 +476,34 @@ input.rangeslider {
     width: calc(100% - 32px);
 }
 .range-slider {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     height: 43px;
 }
+.range-slider__val {
+    position: absolute;
+    top: 0;
+    left: 36px;
+    width: calc(100% - 72px);
+    font-size: 12px;
+}
+.range-slider__val div {
+    top: 0;
+    width: 15px;
+    text-align: center;
+    user-select: none;
+    z-index: -1;
+    position: relative;
+    left: -7.5px;
+    transition: none;
+    font-weight: 600;
+}
 .range-min, .range-max {
     width: 10px;
+    user-select: none;
 }
 .range-slider-label {
     justify-content: center;
@@ -1122,15 +1139,14 @@ input.rangeslider::-webkit-slider-thumb {
 /* popover */
 .popover {
     position: absolute;
-    /* padding: 15px; */
     display: none;
     background-color: #fff;
     height: fit-content;
-    max-height: 100px;
+    max-height: 150px;
     overflow: auto;
-    border: 1px solid #78aedf;
+    border-bottom: 1px solid #78aedf;
     border-top: 0;
-    transform: translateY(100%);
+    transform: translateY(68%);
 }
 .popover.active {
     display: block;
@@ -1353,9 +1369,9 @@ body.popup-active .popup, body.popup-active .bg-popup {
     border-radius: 17.5px;
     background-color: #fff;
     color: #27578c;
-    font-size: 54px;
-    font-weight: 100;
-    line-height: 46px;
+    font-size: 49px;
+    font-weight: 300;
+    line-height: 38px;
     text-align: center;
     cursor: pointer;
     user-select: none;

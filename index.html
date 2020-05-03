@@ -82,11 +82,11 @@
                             <label class="form-label">
                                 <span>Куда</span>
                                 <div class="form-sort">
-                                    <!-- <div class="sort-item">
+                                    <!-- <div data-sort="like" data-list="popover-list__country" class="sort-item">
                                         <img class="arrow" src="./assets/arrow-sort-orange.png" alt="arrow">
                                         <img src="./assets/heart.png" alt="heart">
                                     </div> -->
-                                    <div class="sort-item">
+                                    <div data-sort="AZ" data-list="popover-list__country" class="sort-item country-sort">
                                         <img class="arrow" src="./assets/arrow-sort-white.png" alt="arrow">
                                         <div>Ая</div>
                                     </div>
@@ -156,8 +156,9 @@
                                 <span>Время между пересадкой</span>
                             </label>
                             <div class="range-slider">
+                                <div class="range-slider__val"><div>3</div></div>
                                 <div class="range-min">0</div>
-                                <input type="range" min="1" max="100" value="50" class="rangeslider">
+                                <input type="range" min="0" max="5" value="3" class="rangeslider">
                                 <div class="range-max">5</div>
                             </div>
                         </div>
@@ -185,64 +186,64 @@
                                             <label for="curort__all">Выбраны все курорты</label>
                                         </div>
                                         <div class="form-sort">
-                                            <!-- <div class="sort-item">
+                                            <!-- <div data-sort="like" data-list="curort__list" class="sort-item">
                                                 <img class="arrow" src="./assets/arrow-sort-orange.png" alt="arrow">
                                                 <img src="./assets/heart.png" alt="heart">
                                             </div> -->
-                                            <div class="sort-item">
+                                            <div data-sort="AZ" data-list="curort__list" class="sort-item">
                                                 <img class="arrow" src="./assets/arrow-sort-black.png" alt="arrow">
                                                 <div>Ая</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <ul class="form-list__items">
+                                    <ul class="form-list__items curort__list">
                                         <li class="form-list__item">
                                             <input value="curort-1" id="curort-1" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-1">Coral Travel</label>
+                                            <label for="curort-1">Белек</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="curort-2" id="curort-2" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-2">Coral Travel</label>
+                                            <label for="curort-2">Аланья</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="curort-3" id="curort-3" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-3">Coral Travel</label>
+                                            <label for="curort-3">Стамбул</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="curort-4" id="curort-4" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-4">Coral Travel</label>
+                                            <label for="curort-4">Анталия</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="curort-5" id="curort-5" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-5">Coral Travel</label>
+                                            <label for="curort-5">Сиде</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="curort-6" id="curort-6" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-6">Coral Travel</label>
+                                            <label for="curort-6">Кемер</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="curort-7" id="curort-7" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-7">Coral Travel</label>
+                                            <label for="curort-7">Фетхие</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="curort-8" id="curort-8" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-8">Coral Travel</label>
+                                            <label for="curort-8">Мармарис</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="curort-9" id="curort-9" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-9">Coral Travel</label>
+                                            <label for="curort-9">Бодрум</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="curort-10" id="curort-10" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-10">Coral Travel</label>
+                                            <label for="curort-10">Кушадасы</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="curort-11" id="curort-11" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-11">Coral Travel</label>
+                                            <label for="curort-11">Белиз</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="curort-12" id="curort-12" class="checkbox" name="curort" type="checkbox">
-                                            <label for="curort-12">Coral Travel</label>
+                                            <label for="curort-12">Родум</label>
                                         </li>
                                     </ul>
                                 </div>
@@ -262,64 +263,64 @@
                                             <label for="hotel__all">Выбраны все отели</label>
                                         </div>
                                         <div class="form-sort">
-                                            <!-- <div class="sort-item">
+                                            <!-- <div data-sort="like" data-list="hotel__list" class="sort-item">
                                                 <img class="arrow" src="./assets/arrow-sort-orange.png" alt="arrow">
                                                 <img src="./assets/heart.png" alt="heart">
                                             </div> -->
-                                            <div class="sort-item">
+                                            <div data-sort="AZ" data-list="hotel__list" class="sort-item">
                                                 <img class="arrow" src="./assets/arrow-sort-black.png" alt="arrow">
                                                 <div>Ая</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <ul class="form-list__items">
+                                    <ul class="form-list__items hotel__list">
                                         <li class="form-list__item">
                                             <input value="hotel-1" id="hotel-1" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-1">Coral Travel</label>
+                                            <label for="hotel-1">Родум</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="hotel-2" id="hotel-2" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-2">Coral Travel</label>
+                                            <label for="hotel-2">Белек</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="hotel-3" id="hotel-3" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-3">Coral Travel</label>
+                                            <label for="hotel-3">Алания</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="hotel-4" id="hotel-4" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-4">Coral Travel</label>
+                                            <label for="hotel-4">Бодрум</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="hotel-5" id="hotel-5" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-5">Coral Travel</label>
+                                            <label for="hotel-5">Род</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="hotel-6" id="hotel-6" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-6">Coral Travel</label>
+                                            <label for="hotel-6">Фетхие</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="hotel-7" id="hotel-7" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-7">Coral Travel</label>
+                                            <label for="hotel-7">Анталия</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="hotel-8" id="hotel-8" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-8">Coral Travel</label>
+                                            <label for="hotel-8">Алания</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="hotel-9" id="hotel-9" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-9">Coral Travel</label>
+                                            <label for="hotel-9">Бодрум</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="hotel-10" id="hotel-10" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-10">Coral Travel</label>
+                                            <label for="hotel-10">Кушадасы</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="hotel-11" id="hotel-11" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-11">Coral Travel</label>
+                                            <label for="hotel-11">Белек</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="hotel-12" id="hotel-12" class="checkbox" name="hotel" type="checkbox">
-                                            <label for="hotel-12">Coral Travel</label>
+                                            <label for="hotel-12">Белиз</label>
                                         </li>
                                     </ul>
                                 </div>
@@ -497,51 +498,51 @@
                                     <ul class="form-list__items">
                                         <li class="form-list__item">
                                             <input value="thouroperator-1" id="thouroperator-1" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-1">Coral Travel</label>
+                                            <label for="thouroperator-1">Фетхие</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="thouroperator-2" id="thouroperator-2" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-2">Coral Travel</label>
+                                            <label for="thouroperator-2">Аланья</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="thouroperator-3" id="thouroperator-3" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-3">Coral Travel</label>
+                                            <label for="thouroperator-3">Анталия</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="thouroperator-4" id="thouroperator-4" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-4">Coral Travel</label>
+                                            <label for="thouroperator-4">Кемер</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="thouroperator-5" id="thouroperator-5" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-5">Coral Travel</label>
+                                            <label for="thouroperator-5">Кушадасы</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="thouroperator-6" id="thouroperator-6" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-6">Coral Travel</label>
+                                            <label for="thouroperator-6">Мармарис</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="thouroperator-7" id="thouroperator-7" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-7">Coral Travel</label>
+                                            <label for="thouroperator-7">Белек</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="thouroperator-8" id="thouroperator-8" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-8">Coral Travel</label>
+                                            <label for="thouroperator-8">Белиз</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="thouroperator-9" id="thouroperator-9" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-9">Coral Travel</label>
+                                            <label for="thouroperator-9">Бодрум</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="thouroperator-10" id="thouroperator-10" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-10">Coral Travel</label>
+                                            <label for="thouroperator-10">Род</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="thouroperator-11" id="thouroperator-11" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-11">Coral Travel</label>
+                                            <label for="thouroperator-11">Родум</label>
                                         </li>
                                         <li class="form-list__item">
                                             <input value="thouroperator-12" id="thouroperator-12" class="checkbox" name="thouroperator" type="checkbox">
-                                            <label for="thouroperator-12">Coral Travel</label>
+                                            <label for="thouroperator-12">Белек</label>
                                         </li>
                                     </ul>
                                 </div>
@@ -714,7 +715,16 @@
     <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script>
-        $('.daterange input').daterangepicker();
+        $('.daterange input').daterangepicker({"locale": {
+            "format": "DD.MM.YYYY",
+            "separator": " - ",
+            "applyLabel": "Готово",
+            "cancelLabel": "Отмена",
+            "daysOfWeek": ["Сб","Пн","Вт","Ср","Чт","Пт","Вс"],
+            "monthNames": ["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
+            "firstDay": 0
+        },
+    });
     </script>
     <!-- END:calendar -->
 </body>

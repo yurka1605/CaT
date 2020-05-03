@@ -1,3 +1,12 @@
+// const template
+const popover = document.querySelector('.popover');
+const drops = document.querySelectorAll('.drop');
+const popup = document.querySelector('.popup');
+const bgPopup = document.querySelector('.bg-popup');
+const dropPush = document.querySelector('.push');
+const dropReg = document.querySelector('.reg__drop');
+
+// mock list Array
 const cityesOut = [{"id":1,"title":"Москва","important":1},{"id":2,"title":"Санкт-Петербург","important":1},{"id":10,"title":"Волгоград"},{"id":37,"title":"Владивосток"},{"id":42,"title":"Воронеж"},{"id":49,"title":"Екатеринбург"},{"id":60,"title":"Казань"},{"id":61,"title":"Калининград"},{"id":72,"title":"Краснодар"},{"id":73,"title":"Красноярск"},{"id":95,"title":"Нижний Новгород"},{"id":99,"title":"Новосибирск"},{"id":104,"title":"Омск"},{"id":110,"title":"Пермь"},{"id":119,"title":"Ростов-на-Дону"},{"id":123,"title":"Самара"},{"id":151,"title":"Уфа"},{"id":153,"title":"Хабаровск"},{"id":158,"title":"Челябинск"},{"id":185,"title":"Севастополь"},{"id":627,"title":"Симферополь"}].map(el => el['title']);
 const country = [{
     "id": 19,

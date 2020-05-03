@@ -1,21 +1,21 @@
-const popover = document.querySelector('.popover');
-const popup = document.querySelector('.popup');
-const bgPopup = document.querySelector('.bg-popup');
-const drops = document.querySelectorAll('.drop');
-const cityesOutTemplate = teplateConstructor(cityesOut, 'city');
-const countryTemplate = teplateConstructor(country, 'country');
-const roadTimeTemplate = teplateConstructor(roadTime, 'road-time');
-const stateAmountTemplate = teplateConstructor(stateAmount, 'road-count');
-const cityPullTemplate = teplateConstructor(pullCity, 'pull-city');
-const nightMin = teplateConstructor(night, 'night-min');
-const nightMax = teplateConstructor(night, 'night-max');
-const types = teplateConstructor(typeTravel, 'types-travel');
-const ctxMenuTpl = teplateConstructor(ctxMenu, 'user');
+const sortVariants = {
+    AZ: 'AZ',
+    LIKE: 'like',
+}
 
 window.onload = function() {
+    countSliderPointPosition();
+    document.querySelector('input.rangeslider').addEventListener('change', countSliderPointPosition);
     document.querySelectorAll('.sort-item').forEach(item => {
+        if (!item.classList.contains('country-sort')) {
+            sortLists(item);
+        }
         item.addEventListener('click', function () {
-            this.classList.toggle('active'); 
+            this.classList.toggle('active');
+            if (this.classList.contains('country-sort')) {
+                return;
+            }
+            sortLists(this);
         });
     });
     drops.forEach(item => {
@@ -156,41 +156,47 @@ function showPopover(This, className) {
     popover.classList.add(className);
     const rect = This.parentElement.getBoundingClientRect();
     const top = This.parentElement.offsetTop;
-    const popoverStyles = `top: ${ top }px; left: ${ rect.left }px; width: ${ rect.width + 1 }px;`;
+    const popoverStyles = `top: ${ top }px; left: ${ rect.left }px; width: ${ rect.width }px;`;
     popover.style.cssText = popoverStyles;
     popover.classList.add('active');
-    let template;
+    let arr;
     switch (className) {
         case 'city':
-            template = cityesOutTemplate;
+            arr = cityesOut;
             break;
         case 'country':
-            template = countryTemplate;
+            arr = country;
             break;
         case 'road-time':
-            template = roadTimeTemplate;
+            arr = roadTime;
             break;
         case 'road-count':
-            template = stateAmountTemplate;
+            arr = stateAmount;
             break;
         case 'pull-city':
-            template = cityPullTemplate;
+            arr = pullCity;
             break;
         case 'night-min':
-            template = nightMin;
+            arr = night;
             break;
         case 'night-max':
-            template = nightMax;
+            arr = night;
             break;
         case 'types-travel':
-            template = types;
+            arr = typeTravel;
             break;
         case 'user':
-            template = ctxMenuTpl;
+            arr = ctxMenu;
             break;
         default:
             break;
     }
+    if (className === 'country') {
+        const isSortActive = document.querySelector('.country-sort').classList.contains('active');
+        arr = isSortActive ? arr.sort().reverse() : arr.sort();
+    }
+
+    const template = teplateConstructor(arr, className);
     addlist(template, className);
 }
 
@@ -253,7 +259,7 @@ const oninputSelect = function () {
     const className = dropControl.dataset.drop;
     const rect = this.parentElement.getBoundingClientRect();
     const top = this.parentElement.offsetTop;
-    const popoverStyles = `top: ${ top }px; left: ${ rect.left }px; width: ${ rect.width + 1 }px;`;
+    const popoverStyles = `top: ${ top }px; left: ${ rect.left }px; width: ${ rect.width }px;`;
     popover.style.cssText = popoverStyles;
     popover.classList.add('active', className);
 
@@ -341,5 +347,56 @@ function deleteCheckedAll(name) {
             node.checked = false;
         }
     });
+}
+
+function sortLists(el) {
+    const variant = el.dataset.sort;
+    const list = el.dataset.list;
+    const nodeList = document.querySelector(`.${ list }`);
+    let listItems = Array.from(nodeList.children).map(el => {
+        return {
+            value: el.children[1].innerHTML,
+            node: el
+        };
+    });
+    nodeList.innerHTML = '';
+    if (variant === sortVariants.AZ) {
+        listItems.sort((a,b) => a.value.localeCompare(b.value));
+        el.classList.contains('active') ? listItems.reverse() : listItems;
+    }
+    listItems.forEach(item => {
+        nodeList.appendChild(item.node);
+    });
+}
+
+function countSliderPointPosition() {
+    const rangeslider = document.querySelector('input.rangeslider');
+    const parent = document.querySelector('.range-slider__val');
+    const el = parent.children[0];
+    const val = parseInt(rangeslider.value, 10);
+    el.innerHTML = val;
+    if (val === 0 || val === 5) {
+        el.innerHTML = '';
+    }
+    let leftPos = 0;
+    switch (val) {
+        case 1:
+            leftPos = -3;
+            break;
+        case 2:
+            leftPos = -6;
+            break;
+        case 3:
+            leftPos = -7.5;
+            break;
+        case 4:
+            leftPos = -14;
+            break;
+        default:
+            el.innerHTML = '';
+            break;
+    }
+    const left = 0.2 * rangeslider.value * parent.getBoundingClientRect().width;
+    el.style.cssText = `transform: translateX(${ left }px); left: ${ leftPos }px`;
 }
 /** ======================== END:Functions ========================== **/

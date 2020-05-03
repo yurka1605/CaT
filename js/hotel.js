@@ -1,9 +1,3 @@
-const popover = document.querySelector('.popover');
-const drops = document.querySelectorAll('.drop');
-const popup = document.querySelector('.popup');
-const bgPopup = document.querySelector('.bg-popup');
-const dropPush = document.querySelector('.push');
-const dropReg = document.querySelector('.reg__drop');
 
 window.onload = function() {
     dropReg.addEventListener('click', function () {

@@ -347,10 +347,7 @@
 tbody tr {
     background-color: #f0f0f0;
 }
-.hotel__table .hotel__table-item:nth-child(2n) {
-    background-color: #f0f0f0;
-}
-.hotel__table .hotel__table-item:nth-child(2n + 1) {
+.hotel__table .hotel__table-item {
     background-color: #ffffff;
 }
 @media (max-width: 1200px) {
