@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'Circe';
+	font-family: 'Gilroy';
     src: url('Gilroy-Bold.eot');
     src: local('Gilroy Bold'), local('Gilroy-Bold'),
         url('Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
@@ -10,7 +10,7 @@
 }
 
 @font-face {
-	font-family: 'Circe';
+	font-family: 'Gilroy';
     src: url('Gilroy-Light.eot');
     src: local('Gilroy Light'), local('Gilroy-Light'),
         url('Gilroy-Light.eot?#iefix') format('embedded-opentype'),
@@ -21,7 +21,7 @@
 }
 
 @font-face {
-	font-family: 'Circe';
+	font-family: 'Gilroy';
     src: url('Gilroy-Regular.eot');
     src: local('Gilroy Regular'), local('Gilroy-Regular'),
         url('Gilroy-Regular.eot?#iefix') format('embedded-opentype'),
@@ -44,7 +44,7 @@ ul {
     list-style-type: none;
 }
 body {
-    font-family: 'Circe', sans-serif;
+    font-family: 'Gilroy', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color:#5f5f5f;
@@ -722,6 +722,7 @@ input.rangeslider::-webkit-slider-thumb {
 .price__controls input,
 .price__labels label {
     width: calc((100% - 22px) / 2);
+    text-align: center;
 }
 .price__controls span {
     display: block;
