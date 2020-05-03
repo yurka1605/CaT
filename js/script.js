@@ -48,6 +48,7 @@ window.onload = function() {
 
     document.querySelectorAll('.item__toogle-thoours-btn').forEach(el => {
         el.addEventListener('click', function () {
+            this.classList.toggle('active');
             const thours = this.parentElement.parentElement.parentElement.nextElementSibling;
             thours.classList.toggle('active');
             this.lastElementChild.classList.toggle('active');
@@ -115,7 +116,11 @@ document.querySelector('body').addEventListener('click', function (e) {
                 popover.classList.remove(name);
             }
         });
-        drops.forEach(drop => drop.classList.remove('active'))
+        drops.forEach(drop => {
+            if (!drop.classList.contains('thour__drop')) {
+                drop.classList.remove('active');
+            }
+        });
     }
 });
 

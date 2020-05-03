@@ -420,14 +420,12 @@ nav {
     background-color: #78aedf;
     border-radius: 17.5px;
     cursor: pointer;
-    line-height: 35px;
+    line-height: 29px;
     font-size: 54px;
     text-align: center;
     user-select: none;
 }
-.counter__minus {
-    padding-top: 5px;
-}
+.counter__minus {padding-top: 4px;}
 .night,
 .road {
     display: flex;
@@ -770,7 +768,7 @@ input.rangeslider::-webkit-slider-thumb {
 }
 .checkbox + label {
 	position: relative;
-	padding: 0 0 0 30px;
+	padding: 3px 0 0 30px;
 	cursor: pointer;
 }
 .checkbox + label:before {
@@ -1052,6 +1050,18 @@ input.rangeslider::-webkit-slider-thumb {
     background-color: #f96900;
     border-radius: 4px;
 }
+.item__toogle-thoours-btn span.show {
+    display: block;
+}
+.item__toogle-thoours-btn span.hide {
+    display: none;
+}
+.item__toogle-thoours-btn.active span.show {
+    display: none;
+}
+.item__toogle-thoours-btn.active span.hide {
+    display: block;
+}
 .item__toogle-thoours-btn:hover {
     background-color: transparent;
     color: #f96900;
@@ -1111,10 +1121,8 @@ input.rangeslider::-webkit-slider-thumb {
 }
 .results__more-btn {
     position: relative;
-    display: none;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
     width: 234px;
     height: 42px;
     border: 1px solid #27578c;
@@ -1125,6 +1133,8 @@ input.rangeslider::-webkit-slider-thumb {
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
     border-top: 0;
+    transform: translateX(-50%);
+    left: 50%;
     cursor: pointer;
 }
 .results__more-btn.show {
