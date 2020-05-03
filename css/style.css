@@ -420,12 +420,12 @@ nav {
     background-color: #78aedf;
     border-radius: 17.5px;
     cursor: pointer;
-    line-height: 29px;
+    line-height: 33px;
     font-size: 54px;
     text-align: center;
     user-select: none;
 }
-.counter__minus {padding-top: 4px;}
+.counter__minus {padding-top: 2px;}
 .night,
 .road {
     display: flex;
